@@ -4,7 +4,7 @@ VOLUME_NAME=antigravity-webtop-config
 BACKUP_FILE=antigravity_config_backup.tar.gz
 BACKUP_DIR=./backup
 
-.PHONY: backup restore clean
+.PHONY: backup restore
 
 colima-start:
 	colima start --profile antigravity-webtop --cpu 6 --memory 8 --disk 100
