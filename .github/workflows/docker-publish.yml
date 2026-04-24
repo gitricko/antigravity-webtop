@@ -61,7 +61,7 @@ jobs:
     steps:
       # --- Free space becos the docker build is large ---
       - name: Free Disk Space
-        uses: jlumbroso/free-disk-space@main
+        uses: jlumbroso/free-disk-space@v1
         with:
           tool-cache: true
           android: true
