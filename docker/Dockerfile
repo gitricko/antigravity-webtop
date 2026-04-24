@@ -9,7 +9,7 @@ RUN apt-get update && \
     rm -rf /var/lib/apt/lists/*
 
 ARG ANTIGRAVITY_VERSION
-RUN pip3 install --break-system-packages antigravity==${ANTIGRAVITY_VERSION}
+RUN python3 -m pip install --no-cache-dir --disable-pip-version-check --break-system-packages antigravity==${ANTIGRAVITY_VERSION}
 
 # Place the desktop shortcut and init script so they auto-start on desktop load
 RUN mkdir -p /custom-cont-init.d
