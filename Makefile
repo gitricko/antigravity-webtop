@@ -33,7 +33,7 @@ stop:
 
 docker-image-clean:
 	# docker rm -f $$(docker ps -qa)
-	docker rm -f $(DOCKER_NAME)
+	-docker rm -f $(DOCKER_NAME)
 
 docker-vol-clean:
 	docker volume rm -f $(VOLUME_NAME)
