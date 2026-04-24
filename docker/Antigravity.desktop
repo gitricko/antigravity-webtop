@@ -1,0 +1,8 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Terminal=false
+Exec=mate-terminal --title="Antigravity" -e "bash -c 'python3 -c \"import antigravity\"; exec bash'"
+Name[en_US]=Antigravity
+Name=Antigravity
+GenericName[en_US.UTF-8]=Python Antigravity Easter Egg
