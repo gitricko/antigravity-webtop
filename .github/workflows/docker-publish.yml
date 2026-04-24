@@ -44,8 +44,14 @@ jobs:
 
       - name: Test Docker image
         run: |
-          docker run --rm antigravity-webtop:test > /tmp/test.log &
-          sleep 60
+          container_name=antigravity-webtop-test
+          trap 'docker logs "$container_name" || true; docker stop "$container_name" || true; docker rm -f "$container_name" || true' EXIT
+
+          docker run --detach --name "$container_name" antigravity-webtop:test
+          sleep 10
+
+          docker logs "$container_name"
+          test "$(docker inspect -f '{{.State.Running}}' "$container_name")" = "true"
 
   push-to-ghcr:
     runs-on: ubuntu-latest
