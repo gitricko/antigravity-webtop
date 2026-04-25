@@ -1,5 +1,3 @@
-# ARG ANTIGRAVITY_VERSION=0.1.1
-
 # Use your preferred Webtop flavor as the base (e.g., Ubuntu, Alpine)
 FROM lscr.io/linuxserver/webtop:ubuntu-mate
 
@@ -32,12 +30,6 @@ RUN cd /tmp \
     fi \    
     && make build-app \
     && mv codex-app /usr/share/codex-app
-
-# https://github.com/ilysenko/codex-desktop-linux
-# https://persistent.oaistatic.com/codex-app-prod/Codex.dmg
-# https://persistent.oaistatic.com/codex-app-prod/Codex-latest-x64.dmg
-# make build-app
-
 
 # Add Google Antigravity Repository and Signing Key
 RUN mkdir -p /etc/apt/keyrings && \
