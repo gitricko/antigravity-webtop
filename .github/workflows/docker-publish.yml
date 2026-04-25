@@ -40,14 +40,14 @@ jobs:
 
       - name: Build Docker image
         run: |
-          DOCKER_URI=antigravity-webtop docker build -f ./docker/Dockerfile -t antigravity-webtop:test ./docker
+          DOCKER_URI=ideai-webtop docker build -f ./docker/Dockerfile -t ideai-webtop:test ./docker
 
       - name: Test Docker image
         run: |
-          container_name=antigravity-webtop-test
+          container_name=ideai-webtop-test
           trap 'docker logs "$container_name" || true; docker stop "$container_name" || true; docker rm -f "$container_name" || true' EXIT
 
-          docker run --detach --name "$container_name" antigravity-webtop:test
+          docker run --detach --name "$container_name" ideai-webtop:test
           sleep 10
 
           docker logs "$container_name"
