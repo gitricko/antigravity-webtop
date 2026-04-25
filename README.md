@@ -2,7 +2,7 @@
 A safe, isolated WebTop for engineers and product managers to run agent-enabled IDE workflows without touching their host/root machine.
 
 <p align="center">
-  <strong>Live Dangerously by running agent-based coding, installs, and configuration in a sandbox instead of on your local computer</strong>
+  <strong>Live Dangerously by running agent-based coding, installs, and configs in a sandbox instead of on your local computer</strong>
 </p>
 
 <p align="center">
