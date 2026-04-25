@@ -1,0 +1,13 @@
+[Desktop Entry]
+Name=Codex
+Comment=Experience liftoff
+GenericName=Text Editor
+Exec=/usr/share/codex-app/start.sh
+Icon=codex
+Type=Application
+StartupNotify=false
+StartupWMClass=codex
+Categories=TextEditor;Development;IDE;
+MimeType=application/x-antigravity-workspace;
+Actions=new-empty-window;
+Keywords=vscode;
