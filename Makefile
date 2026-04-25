@@ -1,22 +1,22 @@
-DOCKER_NAME=antigravity-webtop
-DOCKER_IMAGE_NAME=antigravity-webtop
-VOLUME_NAME=antigravity-webtop-config
-BACKUP_FILE=antigravity_config_backup.tar.gz
+DOCKER_NAME=ideai-webtop
+DOCKER_IMAGE_NAME=ideai-webtop
+VOLUME_NAME=ideai-webtop-config
+BACKUP_FILE=ideai_config_backup.tar.gz
 BACKUP_DIR=./backup
 
 .PHONY: backup restore
 
 colima-start:
-	colima start --profile antigravity-webtop --cpu 6 --memory 8 --disk 100
+	colima start --profile ideai-webtop --cpu 3 --memory 6 --disk 100
 
 colima-stop:
-	colima stop --profile antigravity-webtop
+	colima stop --profile ideai-webtop
 
 colima-delete:
-	colima delete -f --data --profile antigravity-webtop
+	colima delete -f --data --profile ideai-webtop
 
 start-locally-baked:
-	DOCKER_URI=antigravity-webtop:latest \
+	DOCKER_URI=ideai-webtop:latest \
 	PUID=$(shell id -u) \
 	PGID=$(shell id -g) \
 	docker compose up -d

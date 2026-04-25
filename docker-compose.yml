@@ -1,10 +1,10 @@
 
-name: antigravity-webtop
+name: ideai-webtop
 services:
-  antigravity-webtop:
+  ideai-webtop:
     # Uses the specific Ubuntu-based MATE tag from LinuxServer.io
-    image: ${DOCKER_URI:-ghcr.io/gitricko/antigravity-webtop:latest}
-    container_name: antigravity-webtop
+    image: ${DOCKER_URI:-ghcr.io/gitricko/ideai-webtop:latest}
+    container_name: ideai-webtop
 
     # Optional: Needed for some modern GUI apps to function properly on older hosts/kernels
     # security_opt:
@@ -20,7 +20,7 @@ services:
 
     volumes:
       # Change /path/to/data to the directory on your host for persistent config/files
-      - antigravity-webtop-config:/config
+      - ideai-webtop-config:/config
       - .:/codespace
       # Uncomment the next line if you want to run Docker inside Webtop
       - /var/run/docker.sock:/var/run/docker.sock
@@ -38,13 +38,13 @@ services:
     restart: unless-stopped
 
     networks:
-      - antigravity-webtop-net
+      - ideai-webtop-net
 
 networks:
-  antigravity-webtop-net:
+  ideai-webtop-net:
     driver: bridge
 
 volumes:
-  antigravity-webtop-config:
+  ideai-webtop-config:
     external: false
-    name: antigravity-webtop-config
+    name: ideai-webtop-config
